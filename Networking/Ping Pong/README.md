@@ -13,5 +13,5 @@ When I ran the netcat command, I got the message:
 As I suspected.   
 Because the program can ask me to send a lot of numbers, I decided to write a simple python program to do it for me (in this repository).
 So after I ran this program, after a while it respond with the flag **flag{S3ems_Like_Y0u_StiLl_FAsT}**.   
-I took the program a while (like a minute) to end. So good thing I wrote it to do it for me :smile:   
+I took the program a while (like a minute) to end. So it's a good thing that I wrote it to do it for me :smile:   
 This a well known challenge and it worths 20 points.
