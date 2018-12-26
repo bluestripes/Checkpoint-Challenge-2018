@@ -1,5 +1,4 @@
 import struct
-from random import shuffle
 
 DICTIONARY = 'IYURO#{EW}GMFSK!LT_AH'
 PATH = 'secret.gif'
