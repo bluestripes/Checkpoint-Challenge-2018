@@ -11,21 +11,25 @@ The first function is generate_initial_key:
 As the name implies, it generates the initial key. It randomized. Well that sucks.
 
 The second function is xor. Pretty straight forward:
-> def xor(s1, s2):  
-> &nbsp;&nbsp;&nbsp;&nbsp;res = [chr(0)]*key_length  
-> &nbsp;&nbsp;&nbsp;&nbsp;for i in range(len(res)):  
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;q = ord(s1[i])  
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d = ord(s2[i])  
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;k = q ^ d  
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res[i] = chr(k)  
-> &nbsp;&nbsp;&nbsp;&nbsp;res = ''.join(res)  
-> &nbsp;&nbsp;&nbsp;&nbsp;return res  
+```python
+def xor(s1, s2):
+  res = [chr(0)]*key_length 
+  for i in range(len(res)): 
+    q = ord(s1[i])  
+    d = ord(s2[i]) 
+    k = q ^ d  
+    res[i] = chr(k)  
+  res = ''.join(res)  
+  return res
+```
 
 And the last function is add_padding:
-> def add_padding(img):  
-> &nbsp;&nbsp;&nbsp;&nbsp;l = key_length - len(img)%key_length  
-> &nbsp;&nbsp;&nbsp;&nbsp;img += chr(l)*l  
-> &nbsp;&nbsp;&nbsp;&nbsp;return img  
+```python
+def add_padding(img):
+  l = key_length - len(img)%key_length
+  img += chr(l)*l
+  return img  
+```
 
 So it looks like the flag is xored with a randomized key and got padded with PKCS#5 kind of pad.
 Now it's time to find out what the script actually does. 
