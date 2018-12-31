@@ -36,7 +36,7 @@ Now it's time to find out what the script actually does.
 It looks like first the image's data get xored with the key, and then the key get a transformation at an unknown function (who spills coffee on a python function?!).  
 So first thing first, let's find out what is the inital key was.  
 Because the encrypted image is PNG, we can be sure that the first four bytes should be 0x89 0x50 0x4E 0x47 ("\x89PNG").  
-So if we'll try to xor the first four bytes in the encrypted image with those bytes we should get the initial key (xor magic!):
+So if we'll try to xor the first four bytes in the encrypted image with those bytes we should get the initial key (xor magic!):<br><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0xCF xor 0x89 = **0x46**  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x09 xor 0x50 = **0x59**  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x0D xor 0x4E = **0x43**  
@@ -44,7 +44,7 @@ So if we'll try to xor the first four bytes in the encrypted image with those by
 
 We got the initial key. Well that's nice but we still need to find out what is the tranformation function.  
 According to [Wikipedia](https://en.wikipedia.org/wiki/Portable_Network_Graphics) the next four bytes should be 0x0D 0x0A 0x1A 0x0A ("\r\n\x1a\n").  
-So again we'll try to xor the second four bytes in the encrypted image with those bytes:  
+So again we'll try to xor the second four bytes in the encrypted image with those bytes:  <br><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x4A xor 0x0D = **0x47**  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x50 xor 0x0A = **0x5A**  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x5e xor 0x1A = **0x44**  
