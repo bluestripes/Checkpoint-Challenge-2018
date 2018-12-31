@@ -19,7 +19,7 @@ The first limit I chose was 200, and I got the following message:
 > Welldonebuddy!Youseemtobeabletostepcarefullythroughthefiles.Thisisyourflag:flag{ARc#vies_Are_The_Best}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
 
 It has no spaces but I can still read this message. And it seems like there is an endless loop which will add the "}" character to the message. After playing with the limits, I found out that 120 is the golden value:
-> Well done buddy!You seem to be able to step carefully through the files.This is your flag:**flag{ARc#vies_Are_The_Best}**
+> Well done buddy! You seem to be able to step carefully through the files.This is your flag:**flag{ARc#vies_Are_The_Best}**
 
 (I add the whitespaces between the words)  
 Sweet :sunglasses: I liked this challenge! Another 20 points for me.
