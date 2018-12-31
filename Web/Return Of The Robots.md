@@ -11,8 +11,10 @@ Well secret_login.html. :unamused:
 So I opened [this path](http://35.194.63.219/csa_2018/return_of_the_robots/_avnznothmlyp/secret_login.html), and found a found a password input.
 I tried a blind random password, a got the alert "Try Again!". So, javascript is involved here.  
 
->	function r(n){for(var r=0,o=0,e="",t=0;t<n.length;t++)n[t].toLowerCase()!=n[t]&&(r+=1),8==++o?(e+=String.fromCharCode(r),r=0,o=0):r<<=1;alert(e)}  
-> function auth(n){if("SzMzcFQjM1IwYjB0JDB1dA=="==btoa(n))var a="mYSqyDYmwBYzNOdhnLDzljcTtTIpiVBCjIHOAmJNmNSXrkIvyQRaTOLJhQWmroOrdJRfSTVZdBZQsYajfJPGxrWMfVqRPCQKdCuVjgSQtPyScJkkzJapmwyDiXXCRieNxVEYRBQmfFBsUAQKuLQMfTgTrEMAuIyiyoJzhvcZevLhhzvLlgFyzaoKmKCGJNlY";else a="sRnDjXnrzAZVoxXnjSWLUoyWtgQpzziflCuxapkGjYEcrUADyMZlgunEaXLqYncWlHGpIVMvltZxveoE";r(a)}
+```javascript
+function r(n){for(var r=0,o=0,e="",t=0;t<n.length;t++)n[t].toLowerCase()!=n[t]&&(r+=1),8==++o?(e+=String.fromCharCode(r),r=0,o=0):r<<=1;alert(e)} 
+function auth(n){if("SzMzcFQjM1IwYjB0JDB1dA=="==btoa(n))var a="mYSqyDYmwBYzNOdhnLDzljcTtTIpiVBCjIHOAmJNmNSXrkIvyQRaTOLJhQWmroOrdJRfSTVZdBZQsYajfJPGxrWMfVqRPCQKdCuVjgSQtPyScJkkzJapmwyDiXXCRieNxVEYRBQmfFBsUAQKuLQMfTgTrEMAuIyiyoJzhvcZevLhhzvLlgFyzaoKmKCGJNlY";else a="sRnDjXnrzAZVoxXnjSWLUoyWtgQpzziflCuxapkGjYEcrUADyMZlgunEaXLqYncWlHGpIVMvltZxveoE";r(a)}
+```
 		
 As you can see there is a "auth" function (which is suspicious) and a "r" function.  
 So of course I checked the "auth" function. In it there is an if, that checks if the function's input in base64 form is equals to "SzMzcFQjM1IwYjB0JDB1dA==".  
